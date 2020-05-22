@@ -1,4 +1,4 @@
-im = imread('000_01.jpg');
+im = imread('000_00.jpg');
 
 Padding_Length = 10;
 
@@ -23,3 +23,5 @@ Imcomplement_Logical_Image(1:end) = 1;
 Imcomplement_Logical_Image(Logical_Image_Connected_Components.PixelIdxList{Idx}) = 0;
 
 imshow(Imcomplement_Logical_Image);
+
+imwrite(Imcomplement_Logical_Image,'Processed_000_00.jpg');
