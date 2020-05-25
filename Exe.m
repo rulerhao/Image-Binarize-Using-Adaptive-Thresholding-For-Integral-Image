@@ -1,12 +1,16 @@
+clear;
 im = imread('000_00.jpg');
+im = im(:,:,1);
+%imshow(im);
+Padding_Length = 30;
 
-Padding_Length = 10;
-
-Sensitivity = 0.7;
+Sensitivity = 0.8;
 
 Logical_Image = Set_Image_To_Logical(im,Padding_Length,Sensitivity); %此的 Sensitivity value 如果能提高對找中心點有更高效果
 
 Imcomplement_Logical_Image = imcomplement(Logical_Image);
+
+%imshow(Imcomplement_Logical_Image);
 
 Logical_Image_Connected_Components = bwconncomp(Imcomplement_Logical_Image); %求出多個連接的部分
 
