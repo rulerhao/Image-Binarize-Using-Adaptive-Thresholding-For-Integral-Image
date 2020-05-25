@@ -5,7 +5,9 @@ The main purpose is select out the similar part of image. So that we can recongn
 # Example Image
 ![image](/000_00.jpg)
 ![image](/Processed_000_00.jpg)
+
 ![image](/000_01.jpg)
 ![image](/Processed_000_01.jpg)
+
 ![image](/bag.jpg)
 ![image](/Processed_bag.jpg)
