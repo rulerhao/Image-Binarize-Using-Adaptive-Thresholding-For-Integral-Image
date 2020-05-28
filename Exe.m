@@ -1,12 +1,16 @@
-im = imread('000_00.jpg');
+clear;
+im = imread('Image\Black_Bird.jpg');
+im = im(:,:,1);
+%imshow(im);
+Padding_Length = 5;
 
-Padding_Length = 10;
-
-Sensitivity = 0.7;
+Sensitivity = 0.9;
 
 Logical_Image = Set_Image_To_Logical(im,Padding_Length,Sensitivity); %此的 Sensitivity value 如果能提高對找中心點有更高效果
 
 Imcomplement_Logical_Image = imcomplement(Logical_Image);
+
+%imshow(Imcomplement_Logical_Image);
 
 Logical_Image_Connected_Components = bwconncomp(Imcomplement_Logical_Image); %求出多個連接的部分
 
@@ -24,4 +28,4 @@ Imcomplement_Logical_Image(Logical_Image_Connected_Components.PixelIdxList{Idx})
 
 imshow(Imcomplement_Logical_Image);
 
-imwrite(Imcomplement_Logical_Image,'Processed_000_00.jpg');
+imwrite(Imcomplement_Logical_Image,'Processed_Image\Processed_Black_Bird.jpg');

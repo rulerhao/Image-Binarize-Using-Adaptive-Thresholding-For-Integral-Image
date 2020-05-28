@@ -14,7 +14,7 @@ s = Padding_Size;
 t = Sensitivity;
 
 [h,w] = size(im);
-out(480,640) = logical(false);
+out(h,w) = logical(false);
 Sum_Table = zeros(h,w);
 
 % ·í i = 1,j = 1 ®É
