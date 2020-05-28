@@ -1,10 +1,10 @@
 clear;
-im = imread('000_00.jpg');
+im = imread('Black_Bird.jpg');
 im = im(:,:,1);
 %imshow(im);
-Padding_Length = 30;
+Padding_Length = 5;
 
-Sensitivity = 0.8;
+Sensitivity = 0.9;
 
 Logical_Image = Set_Image_To_Logical(im,Padding_Length,Sensitivity); %此的 Sensitivity value 如果能提高對找中心點有更高效果
 
@@ -28,4 +28,4 @@ Imcomplement_Logical_Image(Logical_Image_Connected_Components.PixelIdxList{Idx})
 
 imshow(Imcomplement_Logical_Image);
 
-imwrite(Imcomplement_Logical_Image,'Processed_000_00.jpg');
+imwrite(Imcomplement_Logical_Image,'Processed_Black_Bird.jpg');
